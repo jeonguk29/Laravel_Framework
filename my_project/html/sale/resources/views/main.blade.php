@@ -4,8 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>판매관리</title>
-    <link   href="my/css/bootstrap.min.css" rel="stylesheet">
-	 <link  href="my/css/my.css" rel="stylesheet">
+
+	 <link href="{{ asset('my/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('my/css/my.css') }}" rel="stylesheet">
+    <script src="{{ asset('my/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('my/js/popper.js') }}"></script>
+    <script src="{{ asset('my/js/bootstrap.min.js') }}"></script>
+
     <script src="my/js/jquery-3.6.0.min.js"></script>
     <script src="my/js/popper.min.js"></script>
     <script src="my/js/bootstrap.min.js"></script>
@@ -54,7 +59,7 @@
 				<li><a class="dropdown-item" href="#">구분</a></li>
 				<li><a class="dropdown-item" href="#">제품</a></li>
 				<li><hr class="dropdown-divider"></li>
-				<li><a class="dropdown-item" href="#">사용자</a></li>
+			   <li><a class="dropdown-item" href="{{ route('member.index') }}">사용자</a></li>
 			</ul>
 			</li>
 

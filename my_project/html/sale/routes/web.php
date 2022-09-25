@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MemberController; // 여기있는걸 이용하겠다
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,4 @@ Route::get('/', function () {
     return view('main');
 });
 
+Route::resource( 'member', MemberController::class ); // 경로 등록 
