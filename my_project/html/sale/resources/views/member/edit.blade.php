@@ -31,7 +31,7 @@
 </form>
 
 -->
-<form name="form1" method="post" action="{{route('member.update', $row->id)}}">
+<form name="form1" method="post" action="{{route('member.update', $row->id)}}{{$tmp}}">
 @csrf
 @method('PATCH')
 

@@ -2,7 +2,7 @@
 @section('content')
 
 <br>
-<div class="alert mycolor1" role="alert">사용자</div>
+<div class="alert mycolor1" role="alert">제품</div>
 
 <script>
     function find_text()
@@ -31,7 +31,8 @@
 </form>
 
 -->
-<form name="form1" method="post" action="{{route('member.store')}}{{$tmp}}">
+<form name="form1" method="post" action="{{route('product.store')}}{{$tmp}}"
+    enctype="multipart/form-data">
 @csrf
 <table class="table table-bordered table-sm mymargin5">
     <tr>
@@ -39,7 +40,25 @@
         <td width="80%" align="left"></td>
     </tr>
     <tr>
-        <td width="20%" class="mycolor2"><font color="red">*</font> 이름</td>
+        <td width="20%" class="mycolor2"><font color="red">*</font> 구분명</td>
+        <td width="80%" align="left">
+            <div class="fd-inline-flex">
+                  <select name="gubuns_id42" class="form-control form-control-sm">
+					<option value="" selected>선택하세요.</option>
+					@foreach ($list as $row)
+						@if ( $row->id == old('gubuns_id42') )
+							<option value="{{ $row->id }}" selected>{{ $row->name42 }}</option>
+						@else
+							<option value="{{ $row->id }}">{{ $row->name42 }}</option>
+						@endif
+					@endforeach
+							</select>
+            </div>
+			@error("gubuns_id42") {{ $message }} @enderror
+        </td>
+    </tr>
+	 <tr>
+        <td width="20%" class="mycolor2"><font color="red">*</font> 제품명</td>
         <td width="80%" align="left">
             <div class="fd-inline-flex">
                 <input  type="text" name="name42" size="20" maxlength="20" value="{{ old('name42') }}"
@@ -48,52 +67,36 @@
 			@error("name42") {{ $message }} @enderror
         </td>
     </tr>
-	
-	<tr>
-        <td width="20%" class="mycolor2"><font color="red">*</font> 아이디</td>
+	    <tr>
+        <td width="20%" class="mycolor2"><font color="red">*</font> 단가</td>
         <td width="80%" align="left">
             <div class="fd-inline-flex">
-                <input  type="text" name="uid42" size="20" maxlength="20" value="{{ old('uid42') }}"
+                <input  type="text" name="price42" size="20" maxlength="20" value="{{ old('price42') }}"
                          class="form-control form-control-sm">
             </div>
-			@error("uid42") {{ $message }} @enderror
+			@error("price42") {{ $message }} @enderror
         </td>
     </tr>
-	
-	<tr>
-        <td width="20%" class="mycolor2"><font color="red">*</font> 암호</td>
+	    <tr>
+        <td width="20%" class="mycolor2"><font color="red">*</font> 재고</td>
         <td width="80%" align="left">
             <div class="fd-inline-flex">
-                <input  type="text" name="pwd42" size="20" maxlength="20" value="{{ old('pwd42') }}"
+                <input  type="text" name="jaego42" size="20" maxlength="20" value=""
                          class="form-control form-control-sm">
             </div>
-			@error("pwd42") {{ $message }} @enderror
         </td>
     </tr>
-	
-	<tr>
-        <td width="20%" class="mycolor2">전화</td>
+	    <tr>
+        <td width="20%" class="mycolor2"><font color="red">*</font> 사진</td>
         <td width="80%" align="left">
             <div class="fd-inline-flex">
-                <input  type="text" name="tel1" size="3" maxlength="3" value=""
-                         class="form-control form-control-sm">
-				<input  type="text" name="tel2" size="4" maxlength="4" value=""
-                         class="form-control form-control-sm">
-				<input  type="text" name="tel3" size="4" maxlength="4" value=""
+                <input  type="file" name="pic42" size="20" maxlength="20" value=""
                          class="form-control form-control-sm">
             </div>
         </td>
     </tr>
 	
-	<tr>
-        <td width="20%" class="mycolor2">등급</td>
-        <td width="80%" align="left">
-            <div class="fd-inline-flex">
-                <input  type="radio" name="rank42" value="0" checked>&nbsp;직원&nbsp;&nbsp;
-                <input  type="radio" name="rank42" value="1">&nbsp;관리자
-            </div>
-        </td>
-    </tr>
+	
 	
 </table>
 
