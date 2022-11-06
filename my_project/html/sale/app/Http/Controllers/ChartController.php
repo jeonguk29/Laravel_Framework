@@ -59,7 +59,7 @@ class ChartController extends Controller
 		orderby('cnumo42','desc')->
 		groupby('gubuns.name42')->
 		limit(14)->
-		paginate(5)->appends(['text1'=>$text1,'text2'=>$text2]);
+		paginate(14)->appends(['text1'=>$text1,'text2'=>$text2]);
 		
 
 	  return $result;

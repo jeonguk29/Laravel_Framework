@@ -88,7 +88,7 @@
 			@else        
 				<img src=" " width="200" height="150" class="img-fluid img-thumbnail margin5">
 			@endif
-	
+	</tr>
 	
 </table>
 

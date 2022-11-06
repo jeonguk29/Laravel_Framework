@@ -13,6 +13,7 @@ use App\Http\Controllers\CrosstabController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PictureController;
+use App\Http\Controllers\AjaxController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,3 +49,5 @@ Route::post('login/check',[LoginController::class,'check']);
 Route::get('login/logout',[LoginController::class,'logout']);
 
 Route::resource('picture', PictureController::class);
+
+Route::resource('ajax', AjaxController::class);
