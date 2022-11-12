@@ -7,13 +7,14 @@
         $tel2 = trim(substr($row->tel42,3,4));
         $tel3 = trim(substr($row->tel42,7,4));
         $tel = $tel1 . "-" . $tel2 . "-" . $tel3;
-        $rank = $row->rank42==0 ? '직원' : '관리자';    // 0->직원, 1->관리자 
+        $article = $row->article42==0 ? '장교' : '부사관';    // 0->직원, 1->관리자 
+		$articles = $row->articles42==0 ? '장기' : '단기';    // 0->직원, 1->관리자 
 ?>
    
      <div class="container-fluid">
 	 
 <br>
-  <h1 class="h3 mb-2 text-gray-800">병사</h1>
+  <h1 class="h3 mb-2 text-gray-800">간부</h1>
 
    <div class="card shadow mb-4">
    <div class="card-header py-3">	
@@ -37,6 +38,16 @@
 	<tr>
         <td width="20%" class="mycolor2"><font color="red">*</font> 이름</td>
         <td width="80%" align="left">{{$row -> name42}}</td>
+    </tr>
+	
+	<tr>
+        <td width="20%" class="mycolor2">출신 구분</td>
+        <td width="80%" align="left">{{$article}}</td>
+    </tr>
+	
+	<tr>
+        <td width="20%" class="mycolor2">장/단기 구분</td>
+        <td width="80%" align="left">{{$articles}}</td>
     </tr>
 	
 	<tr>
@@ -96,8 +107,8 @@
 </div>
 
 <div align="center">
-    <a href="{{ route( 'member.edit', $row->id ) }}{{$tmp}}" class="btn btn-sm mycolor1">수정</a>
-	<form action="{{ route('member.destroy', $row->id) }}"> <!-- 보안 공격 방지--> 
+    <a href="{{ route( 'officer.edit', $row->id ) }}{{$tmp}}" class="btn btn-sm mycolor1">수정</a>
+	<form action="{{ route('officer.destroy', $row->id) }}"> <!-- 보안 공격 방지--> 
     @csrf
     @method('DELETE')
     <button type="submit" class="btn btn-sm mycolor1" 

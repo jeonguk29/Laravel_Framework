@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController; // 여기있는걸 이용하겠다
+use App\Http\Controllers\GubunController; // 여기있는걸 이용하겠다
+use App\Http\Controllers\ActionController; // 여기있는걸 이용하겠다
+use App\Http\Controllers\OfficerController; // 여기있는걸 이용하겠다
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +21,6 @@ Route::get('/', function () {
 });
 
 Route::resource('member', MemberController::class);
+Route::resource('gubun', GubunController::class);
+Route::resource('action', ActionController::class);
+Route::resource('officer', OfficerController::class);

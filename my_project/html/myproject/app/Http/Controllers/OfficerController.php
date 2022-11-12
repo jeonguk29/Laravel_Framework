@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;    // DB 클래스 사용
-use App\Models\Member2;	      // Eloquent ORM
+use App\Models\Officer;	      // Eloquent ORM
 use App\Models\Gubunmy;  
 
 use Image;
 
-class MemberController extends Controller
+class OfficerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,17 +26,17 @@ class MemberController extends Controller
 		$data['text1'] = $text1;
         
 	$data['list'] = $this->getlist($text1);		// 자료 읽기
-    return view( 'member.index',$data);	// 자료 표시(view/member폴더의 index.blade.php)
+    return view( 'officer.index',$data);	// 자료 표시(view/officer폴더의 index.blade.php)
 	
     }
 	
 	public function getlist($text1)
 	{
 
-		   $result = Member2::leftjoin('gubunmies', 'member2s.division42', '=', 'gubunmies.id')->
-	select('member2s.*', 'gubunmies.name42 as gubun_name42')->
-	    where('member2s.name42', 'like', '%' . $text1 . '%')->
-	    orderby('member2s.name42', 'asc')->
+		   $result = Officer::leftjoin('gubunmies', 'officers.division42', '=', 'gubunmies.id')->
+	select('officers.*', 'gubunmies.name42 as gubun_name42')->
+	    where('officers.name42', 'like', '%' . $text1 . '%')->
+	    orderby('officers.name42', 'asc')->
 	    paginate(5)->appends(['text1'=>$text1]);
     return $result;
 	}
@@ -57,7 +57,7 @@ class MemberController extends Controller
     {
 		$data['list'] = $this->getlist_gubun();
       $data['tmp'] = $this->qstring();
-        return view('member.create', $data);
+        return view('officer.create', $data);
     }
 
     /**
@@ -69,11 +69,11 @@ class MemberController extends Controller
     public function store(Request $request)
     {
 
-      $row = new Member2;       // member 모델변수 row 선언
+      $row = new Officer;       // officer 모델변수 row 선언
       $this -> save_row($request, $row);      // 저장
       
       $tmp = $this->qstring();
-      return  redirect('member'. $tmp);      // 목록화면으로 이동
+      return  redirect('officer'. $tmp);      // 목록화면으로 이동
     }
 
     /**
@@ -87,12 +87,12 @@ class MemberController extends Controller
     $data['tmp'] = $this->qstring();   
 	
 	
-        $data['row'] = Member2::leftjoin('gubunmies', 'member2s.division42', '=', 'gubunmies.id')->
-	select('member2s.*', 'gubunmies.name42 as gubun_name42')->
-	    where('member2s.id', '=', $id)->first();
+        $data['row'] = Officer::leftjoin('gubunmies', 'officers.division42', '=', 'gubunmies.id')->
+	select('officers.*', 'gubunmies.name42 as gubun_name42')->
+	    where('officers.id', '=', $id)->first();
 		
     
-    return view('member.show', $data ); // 요기로 넣어줘라 
+    return view('officer.show', $data ); // 요기로 넣어줘라 
 
     }
 
@@ -106,8 +106,8 @@ class MemberController extends Controller
     {
      		$data['list'] = $this->getlist_gubun();
    $data['tmp'] = $this->qstring();
-    $data['row'] = Member2::find( $id );   // 자료 찾기
-      return view('member.edit', $data );   // 수정화면 호출
+    $data['row'] = Officer::find( $id );   // 자료 찾기
+      return view('officer.edit', $data );   // 수정화면 호출
     }
 
     /**
@@ -120,11 +120,11 @@ class MemberController extends Controller
    public function update(Request $request, $id)
     {
        
-		$row = Member2::find($id); 		// member 모델변수 row 선언
+		$row = Officer::find($id); 		// officer 모델변수 row 선언
 		$this -> save_row($request, $row);		// 저장
 		
 		$tmp = $this->qstring();
-		return  redirect('member'.$tmp);		// 목록화면으로 이동
+		return  redirect('officer'.$tmp);		// 목록화면으로 이동
     }
 
     /**
@@ -136,10 +136,10 @@ class MemberController extends Controller
     public function destroy($id)
     {
         //
-      Member2::find( $id )->delete();
+      Officer::find( $id )->delete();
       
       $tmp = $this->qstring();
-      return redirect('member'.$tmp); // 다시 멤버 클레스로 가라 첫번째 실행은 index라 메인 페이지 보임 
+      return redirect('officer'.$tmp); // 다시 멤버 클레스로 가라 첫번째 실행은 index라 메인 페이지 보임 
 
     }
    
@@ -169,6 +169,10 @@ class MemberController extends Controller
       $row->uid42 = $request->input("uid42");   // 값 입력 
       $row->pwd42 = $request->input("pwd42");
       $row->name42 = $request->input("name42");
+	  
+	  $row->article42 = $request->input("article42");
+	  $row->articles42 = $request->input("articles42");
+			
       $row->gun42 = $request->input("gun42");
       $row->division42 = $request->input("gubuns_id42");
       $row->position42 = $request->input("position42");
@@ -193,7 +197,7 @@ class MemberController extends Controller
          
       $row->save();         // 저장
       
-      return  redirect('member');      // 목록화면으로 이동
+      return  redirect('officer');      // 목록화면으로 이동
       
 }
 

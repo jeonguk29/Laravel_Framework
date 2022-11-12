@@ -2,14 +2,37 @@
 @section('content')
 
 <br>
-<div class="alert mycolor1" role="alert">병사</div>
+
+   <div class="card-body">
+    <div class="table-responsive">
+	
+  <h1 class="h3 mb-2 text-gray-800">병사</h1>
 
 <script>
+	$(function() {
+		
+		$('#writeday42').datetimepicker({
+			locale: 'ko',
+			format: 'YYYY-MM-DD',
+			defaultDate: moment()
+		});
+
+		$("#dday42") .datetimepicker({ 
+			locale: "ko",
+			format: "YYYY-MM-DD",
+			defaultDate: moment()
+		});
+		
+	});
+	
     function find_text()
     {
         form1.action="#";
         form1.submit();
     }
+	
+	
+
 </script>
 
 <!--
@@ -31,9 +54,13 @@
 </form>
 
 -->
-<form name="form1" method="post" action="{{route('member.store')}}{{$tmp}}">
+       <div class="card shadow mb-4">
+          <div class="card-header py-3">
+		  
+<form name="form1" method="post" action="{{route('member.store')}}{{$tmp}}"
+enctype="multipart/form-data">
 @csrf
-<table class="table table-bordered table-sm mymargin5">
+<table table class="table table-bordered" id="dataTable">
  <tr>
         <td width="20%" class="mycolor2"><font color="red">*</font> 군번</td>
         <td width="80%" align="left">
@@ -88,14 +115,22 @@
         </td>
     </tr>
 	
-	<tr>
+<tr>
         <td width="20%" class="mycolor2"><font color="red">*</font> 소대</td>
         <td width="80%" align="left">
             <div class="fd-inline-flex">
-                <input  type="text" name="division42" size="20" maxlength="20" value="{{ old('division42') }}"
-                         class="form-control form-control-sm">
+                  <select name="gubuns_id42" class="form-control form-control-sm">
+					<option value="" selected>선택하세요.</option>
+					@foreach ($list as $row)
+						@if ( $row->id == old('gubuns_id42') )
+							<option value="{{ $row->id }}" selected>{{ $row->name42 }}</option>
+						@else
+							<option value="{{ $row->id }}">{{ $row->name42 }}</option>
+						@endif
+					@endforeach
+							</select>
             </div>
-			@error("division42") {{ $message }} @enderror
+			@error("gubuns_id42") {{ $message }} @enderror
         </td>
     </tr>
 	
@@ -113,13 +148,10 @@
 	<tr>
         <td width="20%" class="mycolor2">전화</td>
         <td width="80%" align="left">
-            <div class="fd-inline-flex">
-                <input  type="text" name="tel1" size="3" maxlength="3" value=""
-                         class="form-control form-control-sm">
-				<input  type="text" name="tel2" size="4" maxlength="4" value=""
-                         class="form-control form-control-sm">
-				<input  type="text" name="tel3" size="4" maxlength="4" value=""
-                         class="form-control form-control-sm">
+            <div class="d-inline-flex">
+                <input  type="text" name="tel1" size="3" maxlength="3" value="" class="form-control form-control-sm">-
+				<input  type="text" name="tel2" size="4" maxlength="4" value="" class="form-control form-control-sm">-
+				<input  type="text" name="tel3" size="4" maxlength="4" value="" class="form-control form-control-sm">
             </div>
         </td>
     </tr>
@@ -129,14 +161,14 @@
         <td width="80%" align="left">
             <div class="d-inline-flex">
 					<div class="input-group input-group-sm date" id="writeday42">
-					<input type="text" name="writeday42" size="10" value="{{old('writeday42')}}"
-				 class="form-control form-control-sm">
-	
-				<div class="input-group-text">
-					<div class="input-group-addon">
-						<i class="far fa-calendar-alt fa-lg"></i>
+					<input type="text" name="writeday42" size="10" value="{{old('writeday42')}}" class="form-control form-control-sm">
+					<div class="input-group-append">
+						<div class="input-group-text">
+							<div class="input-group-addon">
+								<i class="far fa-calendar-alt fa-lg"></i>
+							</div>
+						</div>
 					</div>
-				</div>
 				</div>
             </div>
 			@error("writeday42") {{ $message }} @enderror
@@ -147,20 +179,23 @@
         <td width="20%" class="mycolor2"><font color="red">*</font> 전역일</td>
         <td width="80%" align="left">
             <div class="d-inline-flex">
-					<div class="input-group input-group-sm date" id="dday42">
-					<input type="text" name="dday42" size="10" value="{{old('dday42')}}"
-				 class="form-control form-control-sm">
-	
-				<div class="input-group-text">
-					<div class="input-group-addon">
-						<i class="far fa-calendar-alt fa-lg"></i>
+				<div class="input-group input-group-sm date" id="dday42">
+					<input type="text" name="dday42" size="10" value="{{old('dday42')}}" class="form-control form-control-sm">
+					<div class="input-group-append">
+						<div class="input-group-text">
+							<div class="input-group-addon">
+								<i class="far fa-calendar-alt fa-lg"></i>
+							</div>
+						</div>
 					</div>
 				</div>
-				</div>
+				
             </div>
 			@error("dday42") {{ $message }} @enderror
         </td>
     </tr>
+	
+
 	
 		<tr>
         <td width="20%" class="mycolor2"><font color="red">*</font> 주소</td>
@@ -184,22 +219,21 @@
     </tr>
 	
 	
-
 	
 </table>
-
+ 
 
 <div align="center">
 	<input type="submit" value="저장" class="btn btn-sm mycolor1">&nbsp;
     <input type="button" value="이전화면" class="btn btn-sm mycolor1" onClick="history.back();">
 </div>
 </form>
-
     </div>
-</body>
-</html>
+    </div>
 
- 
+
+	    </div>
+ 	    </div>
 @endsection
 
 

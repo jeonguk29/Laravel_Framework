@@ -5,13 +5,13 @@
   <div class="container-fluid">
   
 <br>
-  <h1 class="h3 mb-2 text-gray-800">병사</h1>
+  <h1 class="h3 mb-2 text-gray-800">간부</h1>
 
 
 <script>
     function find_text()
     {
-        form1.action="{{route('member.index')}}";
+        form1.action="{{route('officer.index')}}";
         form1.submit();
     }
 	
@@ -43,7 +43,7 @@
 
         </div>
         <div class="col-9" align="right">           
-               <a href="{{ route('member.create') }}{{$tmp}}" class="btn btn-sm mycolor1">추가</a>
+               <a href="{{ route('officer.create') }}{{$tmp}}" class="btn btn-sm mycolor1">추가</a>
         </div>
     </div>
 	  
@@ -74,7 +74,7 @@
 ?>
     <tr>
 		  <td>{{ $row->uid42 }}</td>
-		  <td><a href="{{ route('member.show',$row->id)}}{{$tmp}}">{{ $row->name42 }}</a>
+		  <td><a href="{{ route('officer.show',$row->id)}}{{$tmp}}">{{ $row->name42 }}</a>
 		  </td>
 		  <td>{{ $row->rank42 }}</td>
 		  <td>{{ $row->gubun_name42 }}</td>

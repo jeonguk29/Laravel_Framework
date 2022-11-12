@@ -5,7 +5,7 @@
     <div class="card-body">
     <div class="table-responsive">
 	
-  <h1 class="h3 mb-2 text-gray-800">병사</h1>
+  <h1 class="h3 mb-2 text-gray-800">간부</h1>
 
 
 <script>
@@ -55,7 +55,7 @@
        <div class="card shadow mb-4">
           <div class="card-header py-3">
 		  
-<form name="form1" method="post" action="{{route('member.update', $row->id)}}{{$tmp}}"
+<form name="form1" method="post" action="{{route('officer.update', $row->id)}}{{$tmp}}"
 enctype="multipart/form-data">
 @csrf
 @method('PATCH')
@@ -105,6 +105,35 @@ enctype="multipart/form-data">
         </td>
     </tr>
 	
+		<tr>
+        <td width="20%" class="mycolor2">출신 구분</td>
+        <td width="80%" align="left">
+            <div class="fd-inline-flex">
+			@if($row->article42==0)
+                <input  type="radio" name="article42" value="0" checked>&nbsp;장교&nbsp;&nbsp;
+                <input  type="radio" name="article42" value="1">&nbsp;부사관
+			@else
+				 <input  type="radio" name="article42" value="0">&nbsp;장교&nbsp;&nbsp;
+                <input  type="radio" name="article42" value="1" checked>&nbsp;부사관
+            @endif
+			</div>
+        </td>
+    </tr>
+	
+		<tr>
+        <td width="20%" class="mycolor2">장/단기 구분</td>
+        <td width="80%" align="left">
+            <div class="fd-inline-flex">
+			@if($row->articles42==0)
+                <input  type="radio" name="articles42" value="0" checked>&nbsp;장기&nbsp;&nbsp;
+                <input  type="radio" name="articles42" value="1">&nbsp;단기
+			@else
+				 <input  type="radio" name="articles42" value="0">&nbsp;장기&nbsp;&nbsp;
+                <input  type="radio" name="articles42" value="1" checked>&nbsp;단기
+            @endif
+			</div>
+        </td>
+    </tr>
 	<tr>
         <td width="20%" class="mycolor2"><font color="red">*</font> 계급</td>
         <td width="80%" align="left">
