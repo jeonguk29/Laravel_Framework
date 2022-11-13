@@ -33,7 +33,7 @@ class MemberController extends Controller
 	public function getlist($text1)
 	{
 
-		   $result = Member2::leftjoin('gubunmies', 'member2s.division42', '=', 'gubunmies.id')->
+		 $result = Member2::leftjoin('gubunmies', 'member2s.division42', '=', 'gubunmies.id')->
 	select('member2s.*', 'gubunmies.name42 as gubun_name42')->
 	    where('member2s.name42', 'like', '%' . $text1 . '%')->
 	    orderby('member2s.name42', 'asc')->

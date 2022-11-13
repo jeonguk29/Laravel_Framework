@@ -9,31 +9,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>3사단 인덕대대 병사-간부 관리프로그램</title>
+    <title>SB Admin 2 - Animation Utilities</title>
 
     <!-- Custom fonts for this template-->
-	    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{ asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-    <script src="{{ asset('vendor/jquery/jquery.min.js')}}"></script>
-	<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-	<link href="{{ asset('my/css/my.css') }}" rel="stylesheet">
-	<script src="{{ asset('my/js/moment-with-locales.min.js') }}"></script>
-	<script src="{{ asset('my/js/bootstrap5-datetimepicker.min.js') }}"></script>
-	<link href="{{ asset('my/css/bootstrap5-datetimepicker.min.css') }}" rel="stylesheet">
-	
-	
-	<link href="{{ asset('my/css/bootstrap.min.css') }}" rel="stylesheet">
-    <script src="{{ asset('my/js/popper.js') }}"></script>
-    <script src="{{ asset('my/js/bootstrap.min.js') }}"></script>
-	
 </head>
 
 <body id="page-top">
+
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -41,23 +31,22 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('mainimg.index')}}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">3사단 인덕대대 병력관리 <sup></sup></div>
+                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard 
-            <li class="nav-item active">
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-			-->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -71,32 +60,33 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-user-shield"></i>
-                    <span>조회</span>
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Components</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">조회:</h6>
-                        <a class="collapse-item" href="{{route('member.index')}}">병사조회</a>
-                        <a class="collapse-item" href="{{route('officer.index')}}">간부조회</a>
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="collapse-item" href="buttons.html">Buttons</a>
+                        <a class="collapse-item" href="cards.html">Cards</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>소대 작전계획</span>
+                    <span>Utilities</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">소대 작전계획 :</h6>
-                        <a class="collapse-item" href="{{route('gubun.index')}}">소대</a>
-						<a class="collapse-item" href="{{route('chart.index')}}">소대별 작전 할당 분포도</a>
-                        <a class="collapse-item" href="{{route('action.index')}}">작전계획</a>
+                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <a class="collapse-item" href="utilities-color.html">Colors</a>
+                        <a class="collapse-item" href="utilities-border.html">Borders</a>
+                        <a class="collapse-item active" href="utilities-animation.html">Animations</a>
+                        <a class="collapse-item" href="utilities-other.html">Other</a>
                     </div>
                 </div>
             </li>
@@ -114,39 +104,36 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>우수소대 / 출타자 확인</span>
+                    <span>Pages</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">우수소대 / 출타자 확인:</h6>
-                        <a class="collapse-item" href="{{route('best.index')}}">우수소대</a>
-                        <a class="collapse-item" href="{{route('vacation.index')}}">병사 출타자 조회/등록</a>
-						 <a class="collapse-item" href="{{route('officervacation.index')}}">간부 출타자 조회/등록</a>
-<!--                 
-				 <a class="collapse-item" href="{{route('mainimg.index')}}">부대 소개</a>
+                        <h6 class="collapse-header">Login Screens:</h6>
+                        <a class="collapse-item" href="login.html">Login</a>
+                        <a class="collapse-item" href="register.html">Register</a>
+                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>
                         <a class="collapse-item" href="blank.html">Blank Page</a>
-						-->
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="{{route('mainimg.index')}}">
+                <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>부대소개</span></a>
+                    <span>Charts</span></a>
             </li>
 
-            <!-- Nav Item - Tables 
+            <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
             </li>
--->
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -154,8 +141,6 @@
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
-
 
         </ul>
         <!-- End of Sidebar -->
@@ -168,12 +153,13 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-				<img src="{{asset('/my/img/main.png')}}" height="50" >
+
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-                 
+
+                    <!-- Topbar Search -->
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
@@ -186,8 +172,7 @@
                             </div>
                         </div>
                     </form>
-					
- 
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -227,7 +212,7 @@
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
-                                    알림
+                                    Alerts Center
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
@@ -236,8 +221,8 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="small text-gray-500">2022년 11월 12일</div>
-                                        <span class="font-weight-bold">익일 장병 자기개발 회의 관련 메일 확인바람</span>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -247,8 +232,8 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="small text-gray-500">2022년 11월 12일</div>
-                                        부대 운영관리 비용 예산 삭감 안내
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -258,8 +243,8 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="small text-gray-500">2022년 11월 12일</div>
-                                       <span class="font-weight-bold">3사단 공식홈페이지 사단장 방문일정 확인 필독!</span>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
                                     </div>
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
@@ -287,8 +272,9 @@
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
-                                        <div class="text-truncate">중대별 외진병사 인원보고 부탁드립니다.</div>
-                                        <div class="small text-gray-500">간호장교</div>
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                            problem I've been having.</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -298,8 +284,9 @@
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
-                                        <div class="text-truncate">금일 회의 장소는 어디인가? </div>
-                                        <div class="small text-gray-500">대대장</div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how
+                                            would you like them sent to you?</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -309,12 +296,11 @@
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
-                                        <div class="text-truncate">인원보충 관련 공지사항 확인부탁드립니다.</div>
-                                        <div class="small text-gray-500">인사장교</div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                                            the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                                     </div>
                                 </a>
-								  <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-								<!--
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
                                         <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
@@ -327,9 +313,8 @@
                                         <div class="small text-gray-500">Chicken the Dog · 2w</div>
                                     </div>
                                 </a>
-                              -->
-								
-						   </div>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            </div>
                         </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -340,7 +325,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{ asset('img/undraw_profile.svg')}}">
+                                    src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -368,9 +353,121 @@
                     </ul>
 
                 </nav>
-       
-		@yield('content')
-		
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-1 text-gray-800">Animation Utilities</h1>
+                    <p class="mb-4">Bootstrap's default utility classes can be found on the official <a
+                            href="https://getbootstrap.com/docs">Bootstrap Documentation</a> page. The custom utilities
+                        below were created to extend this theme past the default utility classes built into Bootstrap's
+                        framework.</p>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Grow In Utility -->
+                        <div class="col-lg-6">
+
+                            <div class="card position-relative">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Grow In Animation Utilty</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <code>.animated--grow-in</code>
+                                    </div>
+                                    <div class="small mb-1">Navbar Dropdown Example:</div>
+                                    <nav class="navbar navbar-expand navbar-light bg-light mb-4">
+                                        <a class="navbar-brand" href="#">Navbar</a>
+                                        <ul class="navbar-nav ml-auto">
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                    role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    Dropdown
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right animated--grow-in"
+                                                    aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item" href="#">Action</a>
+                                                    <a class="dropdown-item" href="#">Another action</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <p class="mb-0 small">Note: This utility animates the CSS transform property,
+                                        meaning it will override any existing transforms on an element being animated!
+                                        In this theme, the grow in animation is only being used on dropdowns within the
+                                        navbar.</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Fade In Utility -->
+                        <div class="col-lg-6">
+
+                            <div class="card position-relative">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Fade In Animation Utilty</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <code>.animated--fade-in</code>
+                                    </div>
+                                    <div class="small mb-1">Navbar Dropdown Example:</div>
+                                    <nav class="navbar navbar-expand navbar-light bg-light mb-4">
+                                        <a class="navbar-brand" href="#">Navbar</a>
+                                        <ul class="navbar-nav ml-auto">
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                    role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    Dropdown
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right animated--fade-in"
+                                                    aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item" href="#">Action</a>
+                                                    <a class="dropdown-item" href="#">Another action</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <div class="small mb-1">Dropdown Button Example:</div>
+                                    <div class="dropdown mb-4">
+                                        <button class="btn btn-primary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Dropdown
+                                        </button>
+                                        <div class="dropdown-menu animated--fade-in"
+                                            aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                    <p class="mb-0 small">Note: This utility animates the CSS opacity property, meaning
+                                        it will override any existing opacity on an element being animated!</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
@@ -413,20 +510,14 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
     <!-- Core plugin JavaScript-->
-    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="{{ asset('js/sb-admin-2.min.js')}}"></script>
-
-    <!-- Page level plugins -->
-    <script src="{{ asset('vendor/chart.js/Chart.min.js')}}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ asset('js/demo/chart-area-demo.js')}}"></script>
-    <script src="{{ asset('js/demo/chart-pie-demo.js')}}"></script>
-
+    <script src="js/sb-admin-2.min.js"></script>
 
 </body>
 

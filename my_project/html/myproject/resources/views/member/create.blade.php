@@ -24,6 +24,7 @@
 		});
 		
 	});
+
 	
     function find_text()
     {
@@ -60,7 +61,7 @@
 <form name="form1" method="post" action="{{route('member.store')}}{{$tmp}}"
 enctype="multipart/form-data">
 @csrf
-<table table class="table table-bordered" id="dataTable">
+<table class="table table-bordered table-sm mymargin5">
  <tr>
         <td width="20%" class="mycolor2"><font color="red">*</font> 군번</td>
         <td width="80%" align="left">
@@ -156,11 +157,14 @@ enctype="multipart/form-data">
         </td>
     </tr>
 	
-	  <tr>
+
+ 
+	
+<tr>
         <td width="20%" class="mycolor2"><font color="red">*</font> 생일</td>
         <td width="80%" align="left">
-            <div class="d-inline-flex">
-					<div class="input-group input-group-sm date" id="writeday42">
+            <div class="form-inline">
+				<div class="input-group input-group-sm date" id="writeday42">
 					<input type="text" name="writeday42" size="10" value="{{old('writeday42')}}" class="form-control form-control-sm">
 					<div class="input-group-append">
 						<div class="input-group-text">
@@ -175,10 +179,11 @@ enctype="multipart/form-data">
         </td>
     </tr>
 	
+	
 	  <tr>
         <td width="20%" class="mycolor2"><font color="red">*</font> 전역일</td>
         <td width="80%" align="left">
-            <div class="d-inline-flex">
+            <div class="form-inline">
 				<div class="input-group input-group-sm date" id="dday42">
 					<input type="text" name="dday42" size="10" value="{{old('dday42')}}" class="form-control form-control-sm">
 					<div class="input-group-append">
@@ -189,7 +194,6 @@ enctype="multipart/form-data">
 						</div>
 					</div>
 				</div>
-				
             </div>
 			@error("dday42") {{ $message }} @enderror
         </td>

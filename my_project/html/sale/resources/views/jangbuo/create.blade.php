@@ -38,10 +38,10 @@
 		form1.bigo42.focus();
 	}
 	
-	function find_product()
+function find_product()
 	{
 		window.open("{{route('findproduct.index')}}","",
-		"resizable=yes,scrollbars=yes, width=500,height=600");
+		"resizable=yes,scrollbars=yes, width=500,height=500");
 	}
 	
 	
