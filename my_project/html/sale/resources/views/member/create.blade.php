@@ -72,18 +72,20 @@
     </tr>
 	
 	<tr>
-        <td width="20%" class="mycolor2">전화</td>
-        <td width="80%" align="left">
-            <div class="fd-inline-flex">
-                <input  type="text" name="tel1" size="3" maxlength="3" value=""
-                         class="form-control form-control-sm">
-				<input  type="text" name="tel2" size="4" maxlength="4" value=""
-                         class="form-control form-control-sm">
-				<input  type="text" name="tel3" size="4" maxlength="4" value=""
-                         class="form-control form-control-sm">
-            </div>
-        </td>
-    </tr>
+                                    <td class="mycolor2"><font color="red">*</font> 전화</td>
+                                    <td align="left">
+                                        <div class="d-inline-flex">
+                                            <input  type="text" name="tel1" size="3" maxlength='3' value=""
+                                                class="form-control form-control-sm"> - 
+                                            <input  type="text" name="tel2" size="4" maxlength='4' value=""
+                                                class="form-control form-control-sm"> - 
+                                            <input  type="text" name="tel3" size="4" maxlength='4' value=""
+                                                class="form-control form-control-sm">
+                                        </div>
+                                    </td>
+                                </tr>
+
+
 	
 	<tr>
         <td width="20%" class="mycolor2">등급</td>

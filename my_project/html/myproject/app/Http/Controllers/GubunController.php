@@ -132,10 +132,14 @@ class GubunController extends Controller
        $request->validate( [
     
         'name42' => 'required|max:20',
+		'leader42' => 'required|max:20',
+		'subleader42' => 'required|max:20',
     ] ,
     [
      
         'name42.required' => '이름은 필수입력입니다.',
+		'leader42.required' => '소대장이름은 필수입력입니다.',
+		'subleader42.required' => '분대장이름은 필수입력입니다.',
         'name42.max' => '20자 이내입니다.',
     ] );
 	

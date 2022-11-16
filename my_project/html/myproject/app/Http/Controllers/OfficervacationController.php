@@ -163,15 +163,18 @@ class OfficervacationController extends Controller
         'startwriteday42' => 'required|date',
 		'endwriteday42' => 'required|date',
 			'uids_id42' => 'required',
+			'area42' => 'required',
 		
     ] ,
     [
      
 		'startwriteday42.required' => '날짜는 필수입력입니다.',
 		'endwriteday42.required' => '날짜는 필수입력입니다.',
+		'area42.required' => '출타지역은 필수입력입니다.',
         'uids_id42.required' => '군번은 필수입력입니다.',
 		'startwriteday42.data' => '날짜형식이 잘못되었습니다..',
 		'endwriteday42.data' => '날짜형식이 잘못되었습니다..',
+		
     ] );
 	
    

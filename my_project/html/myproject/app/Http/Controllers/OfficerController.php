@@ -18,7 +18,8 @@ class OfficerController extends Controller
      */
     public function index()
     {
-	
+			if(session()->get("position42")!="중대장")return redirect("/");
+
 		$data['tmp'] = $this->qstring();
 
 		

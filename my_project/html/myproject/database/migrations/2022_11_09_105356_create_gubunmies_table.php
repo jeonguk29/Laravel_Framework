@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('gubunmies', function (Blueprint $table) {
             $table->id();
-			$table->string('name42',20); 
-			$table->string('leader42',20);
-			$table->string('subleader42',20);
-			$table->string('pic42',255)->nullable();
+			$table->string('name42',20);  // 소대명
+			$table->string('leader42',20); // 소대장 이름
+			$table->string('subleader42',20); // 분대장 이름 
+			$table->string('pic42',255)->nullable(); // 소대 사진 
             $table->timestamps();
         });
     }

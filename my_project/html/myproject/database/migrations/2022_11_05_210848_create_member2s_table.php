@@ -25,8 +25,8 @@ return new class extends Migration
 			$table->string('tel42',11)->nullable(); // 전화번호
 			$table->date('writeday42')->nullable();  // 생일 
 			$table->date('dday42')->nullable(); // 전역일
-			$table->string('juso42',100); // 계급 
-			$table->string('pic42',255)->nullable();
+			$table->string('juso42',100); // 집 주소 
+			$table->string('pic42',255)->nullable(); // 프로필 사진
 			
 			
 		

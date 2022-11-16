@@ -162,6 +162,7 @@ class VacationController extends Controller
         'startwriteday42' => 'required|date',
 		'endwriteday42' => 'required|date',
 			'uids_id42' => 'required',
+			'area42' => 'required',
 		
     ] ,
     [
@@ -171,6 +172,7 @@ class VacationController extends Controller
         'uids_id42.required' => '군번은 필수입력입니다.',
 		'startwriteday42.data' => '날짜형식이 잘못되었습니다..',
 		'endwriteday42.data' => '날짜형식이 잘못되었습니다..',
+		'area42.required' => '출타지역은 필수입력입니다.',
     ] );
 	
    

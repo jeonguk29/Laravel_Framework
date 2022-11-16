@@ -147,13 +147,20 @@ class ActionController extends Controller
     
         'writeday42' => 'required|date',
 		'divisions_id42' => 'required',
+		 'operation42' => 'required|max:250',
+		  'bigo42' => 'required|max:500',
     ] ,
     [
      
 		'writeday42.required' => '날짜는 필수입력입니다.',
-        'products_id42.required' => '소대명은 필수입력입니다.',
+		'divisions_id42.required' => '소대명은 필수입력입니다.',
+		'operation42.required' => '작전명은 필수입력입니다.',
 		'writeday42.data' => '날짜형식이 잘못되었습니다..',
+		'operation42.max' => '250자 이내입니다.',
+		'bigo42.max' => '500자 이내입니다.',
     ] );
+	
+	
 	
 	
 		
