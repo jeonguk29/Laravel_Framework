@@ -191,6 +191,7 @@
                 <input  type="text" name="area42" size="20" maxlength="20" value="{{ old('area42') }}"
                          class="form-control form-control-sm">
             </div>
+				@error("area42") {{ $message }} @enderror
         </td>
     </tr>
 	

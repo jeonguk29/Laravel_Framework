@@ -12,6 +12,7 @@ use App\Http\Controllers\FindproductController;
 use App\Http\Controllers\MainimgController;
 use App\Http\Controllers\OfficervacationController;
 use App\Http\Controllers\FindofficerController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,4 +40,7 @@ Route::resource('findproduct', FindproductController::class );
 Route::resource('mainimg', MainimgController::class );
 Route::resource('officervacation', OfficervacationController::class );
 Route::resource('findofficer', FindofficerController::class );
+
+Route::post('login/check',[LoginController::class,'check']);
+Route::get('login/logout',[LoginController::class,'logout']);
 

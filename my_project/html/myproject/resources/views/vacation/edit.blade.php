@@ -149,6 +149,7 @@
                          class="form-control form-control-sm">
             </div>
 			</td>
+			@error("area42") {{ $message }} @enderror
 			</tr>	
 </table>
 

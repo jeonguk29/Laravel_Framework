@@ -155,11 +155,11 @@ enctype="multipart/form-data">
 	<tr>
         <td width="20%" class="mycolor2">전화</td>
         <td width="80%" align="left">
-            <div class="fd-inline-flex">
+            <div class="d-inline-flex">
                 <input  type="text" name="tel1" size="3" maxlength="3" value="{{$tel1}}"
-                         class="form-control form-control-sm">
+                         class="form-control form-control-sm"> -
 				<input  type="text" name="tel2" size="4" maxlength="4" value="{{$tel2}}"
-                         class="form-control form-control-sm">
+                         class="form-control form-control-sm"> -
 				<input  type="text" name="tel3" size="4" maxlength="4" value="{{$tel3}}"
                          class="form-control form-control-sm">
             </div>

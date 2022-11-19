@@ -68,26 +68,33 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+		@if(session()->get("position42")=="중대장")           
+		   <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-user-shield"></i>
                     <span>조회</span>
                 </a>
+			
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+                    	
+					<div class="bg-white py-2 collapse-inner rounded">
+					
                         <h6 class="collapse-header">조회:</h6>
                         <a class="collapse-item" href="{{route('member.index')}}">병사조회</a>
                         <a class="collapse-item" href="{{route('officer.index')}}">간부조회</a>
+					
                     </div>
+							
                 </div>
+			
             </li>
-
+	@endif
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="fas fa-fw fa-table"></i>
                     <span>소대 작전계획</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -113,7 +120,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class="fas fa-fw fa-list"></i>
                     <span>우수소대 / 출타자 확인</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -214,6 +221,7 @@
                                 </form>
                             </div>
                         </li>
+						
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
@@ -334,7 +342,7 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - User Information -->
+                        <!-- Nav Item - User Information 
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -342,7 +350,8 @@
                                 <img class="img-profile rounded-circle"
                                     src="{{ asset('img/undraw_profile.svg')}}">
                             </a>
-                            <!-- Dropdown - User Information -->
+							
+                            <!-- Dropdown - User Information 
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
@@ -364,7 +373,26 @@
                                 </a>
                             </div>
                         </li>
+						
+						-->
+			 <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+									
+			@if(!session()->exists("uid42"))
+			<a href="#" class="btn btn-primary btn-sm"
+			data-bs-toggle='modal' data-bs-target='#exampleModal'>로그인</a>
+			@else
+			<a href="{{url('login/logout')}}" class="btn btn-primary btn-sm">로그아웃</a>
+			@endif
+			</div>
+			
+			</form>
+		  
 
+
+
+
+			
                     </ul>
 
                 </nav>
@@ -375,7 +403,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; 3사단 백골부대 인덕대대</span>
                     </div>
                 </div>
             </footer>
@@ -431,3 +459,39 @@
 </body>
 
 </html>
+
+<!-- Login Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+
+			<div class="modal-header mycolor1">
+				<h5 class="modal-title" id="exampleModalLabel">로그인</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+
+			<div class="modal-body bg-light">
+				<form name="form_login" method="post" action="{{ url('login/check') }}">
+				@csrf
+				<table class="table table-borderless mymargin5">
+					<tr>
+						<td width="30%"><h6>아이디</h6></td>
+						<td width="70%"><input type="text" name="uid42" class="form-control"></td>
+					</tr>
+					<tr>
+						<td><h6>암&nbsp;호</h6></td>
+						<td><input type="password" name="pwd42" class="form-control"></td>
+					</tr>
+				</table>
+				</form>
+			</div>
+
+			<div class="modal-footer alert-secondary">
+				<button type="button" class="btn btn-sm btn-secondary" 
+					onclick="javascript:form_login.submit();">확인</button>
+				<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">닫기</button>
+			</div>
+
+		</div>
+	</div>
+</div>

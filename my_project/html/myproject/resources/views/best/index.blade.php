@@ -99,8 +99,8 @@
   @foreach ($list as $row)       
 
     <tr>
-		<td align="left">{{ $row->product_name42}}</td>
-			<td align="right">{{ number_format($row->cnumo42)}}</td>
+		<td align="center">{{ $row->product_name42}}</td>
+			<td align="center">{{ number_format($row->cnumo42)}}</td>
         
     </tr>
     @endforeach
